@@ -13,17 +13,11 @@ then
     #from within terminal in the recovery mode (cmd+R while booting)
     ##CoreServices Boot.efi
     sudo chflags nouchg /System/Library/CoreServices/boot.efi
-    sudo cp ~/boot.efi /System/Library/CoreServices/
+    sudo cp ~/Projects/Mac-Pro-1-1-El-Capitan-Upgrades/boot.efi /System/Library/CoreServices/
     sudo chflags uchg /System/Library/CoreServices/boot.efi
     ##Copy to /usr
-    sudo cp ~/boot.efi /usr/standalone/i386
+    sudo cp ~/Projects/Mac-Pro-1-1-El-Capitan-Upgrades/boot.efi /usr/standalone/i386
     ##To-Do: Copy to Recovery Partition
 else
     exit
 fi
-
-#Get Nvidia Driver
-curl -O http://us.download.nvidia.com/Mac/Quadro_Certified/346.03.02f02/WebDriver-346.03.02f02.pkg
-
-#Install Nvidia Driver
-sudo installer -pkg *.pkg -target /
